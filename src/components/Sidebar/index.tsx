@@ -1,3 +1,6 @@
+// https://youtu.be/SJTazZUQVDE?si=2IJoWJuoUzUivP-7 
+// https://youtu.be/dRLYO1-dhQU?si=iuV4-5caCuP6i52m 
+
 import { createRef, useCallback, useMemo, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
@@ -396,7 +399,7 @@ function Sidebar() {
                                   }}
                                   ref={renameListInputRef}
                                   type="text"
-                                  className="w-full truncate bg-transparent text-left text-base text-text outline-none"
+                                  className="w-full truncate bg-transparent text-left text-base text-lighttxt outline-none"
                                 />
                               ) : (
                                 <span

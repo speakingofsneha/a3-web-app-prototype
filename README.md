@@ -1,3 +1,16 @@
+- implement edit task functionality 
+- fix cal functionality in mobile view 
+- add sound bite for update task done 
+- comment your code, 
+- add references used during dev 
+- readme: intro, tech & ins 
+- complete design iterations section 
+- reflection, future cons, acknowledgements etc
+- update app name everywhere. 
+- deploy using netlify
+- add demo section & wrap up readme 
+
+
 # Task Management Web-Application
 use emoji's in titles for scanning!!!! 
 ## Overview- anu?
@@ -13,7 +26,7 @@ use emoji's in titles for scanning!!!!
 #### Front-end Frameworks & Libraries 
 - react.js
 - react-calendar
-- atlassian's react-beautiful-dnd(drag and drop)
+- atlassian's react-beautiful-dnd
 - react-router-dom
 - redux 
 
