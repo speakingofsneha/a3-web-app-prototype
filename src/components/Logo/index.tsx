@@ -1,4 +1,4 @@
-interface Props {
+ interface Props {
   color?: string;
   size?: number;
   strokeWidth?: number;
@@ -35,4 +35,4 @@ function Logo({ color, size = 24, strokeWidth = 4 }: Props) {
   );
 }
 
-export default Logo;
+export default Logo; 

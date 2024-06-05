@@ -5,7 +5,7 @@ import tsConfigPaths from "vite-tsconfig-paths";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: "/deco2017-a3",
+  base: "/anu",
   mode: "production",
   plugins: [react(), tsConfigPaths()],
   server: {

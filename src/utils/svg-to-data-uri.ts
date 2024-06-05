@@ -27,4 +27,4 @@ const svgToDataUri = (svg: string) => {
   return "data:image/svg+xml;charset=UTF-8," + encoded.trim();
 };
 
-export default svgToDataUri;
+export default svgToDataUri;  

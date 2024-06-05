@@ -40,17 +40,14 @@ function AppLayout() {
       return;
     }
 
-    if (document.title !== `${list.name} · a3`) {
-      document.title = `${list.name} · a3`;
+    if (document.title !== `${list.name} · anu`) {
+      document.title = `${list.name} · anu`;
     }
 
     const svg = `
-      <svg width="400" height="400" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path fill-rule="evenodd" clip-rule="evenodd" d="M230 110H170C136.863 110 110 136.863 110 170V230C110 263.137 136.863 290 170 290H230C263.137 290 290 263.137 290 230V170C290 136.863 263.137 110 230 110ZM170 50C103.726 50 50 103.726 50 170V230C50 296.274 103.726 350 170 350H230C296.274 350 350 296.274 350 230V170C350 103.726 296.274 50 230 50H170Z" fill="${
-          list.color ?? "#1992FA"
-        }" />
-        <path fill-rule="evenodd" clip-rule="evenodd" d="M190 150C167.909 150 150 167.909 150 190V210C150 232.091 167.909 250 190 250H210C232.092 250 250 232.091 250 210V190C250 167.909 232.092 150 210 150H190Z" fill="${
-          list.color ?? "#1992FA"
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="size-6">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z" fill="${
+        list.color ?? "#1992FA"
         }" />
       </svg>
     `;
@@ -64,7 +61,6 @@ function AppLayout() {
 
       document.head.appendChild(link);
     }
-
     link.href = svgToDataUri(svg);
   }, [lists, navigate, slug]);
 

@@ -73,6 +73,28 @@ function TaskItem({
     [dispatch]
   );
 
+  const startRenamingTask = useCallback(
+    (e: React.MouseEvent) => {
+      const height = e.currentTarget.getBoundingClientRect().height;
+      const width = e.currentTarget.getBoundingClientRect().width;
+
+      setRenamingTask(true);
+
+      setTimeout(() => {
+        if (!renameTaskTextareaRef.current) {
+          setRenamingTask(false);
+          return;
+        }
+
+        renameTaskTextareaRef.current.focus();
+        renameTaskTextareaRef.current.select();
+        renameTaskTextareaRef.current.style.height = `${height}px`;
+        renameTaskTextareaRef.current.style.width = `${width}px`;
+      });
+    },
+    [setRenamingTask, renameTaskTextareaRef]
+  );
+
   // Function to toggle task done state
   const toggleTaskDone = () => {
     dispatch(updateTask({ task: { ...task, done: !task.done } }));
@@ -116,6 +138,11 @@ function TaskItem({
         />
       ) : (
         <span
+          onClick={(e) => {
+            if (e.detail !== 2) return;
+
+            startRenamingTask(e);
+          }}
           className="min-h-[44px] w-full py-3 text-base text-text sm:min-h-[52px] sm:py-4 md:min-h-[60px] md:py-5"
         >
           <ReactMarkdown

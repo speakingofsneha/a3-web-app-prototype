@@ -1,10 +1,4 @@
-- implement edit task functionality 
-- fix cal functionality in mobile view 
-- add sound bite for update task done 
-- comment your code, 
-- add references used during dev 
-- readme: intro, tech & ins 
-- complete design iterations section 
+
 - reflection, future cons, acknowledgements etc
 - update app name everywhere. 
 - deploy using netlify
@@ -31,14 +25,14 @@ use emoji's in titles for scanning!!!!
 - redux 
 
 Styling and Design 
-- tailwindcss with postcss
+- tailwindcss with postcss plugin
 
 Development tools and Language 
 - typescript
 - vite.
 
 Hosting and Deoployment
-- maybe netlify to deploy?
+- maybe vercel to deploy?
 
 ## Instructions to run locally
 
