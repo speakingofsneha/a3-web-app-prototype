@@ -1,0 +1,19 @@
+@import url("https://db.onlinewebfonts.com/c/cc63ce6e304da54106961b31a1d744a9?family=Apercu");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Apercu"; 
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}

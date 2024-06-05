@@ -1,0 +1,145 @@
+.react-calendar {
+  // Styles for the calendar container
+  flex: unset !important;
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  padding: 4px;
+  border: 2px solid #CDC7CE;
+  border-radius: 8px;
+  cursor: default;
+  // glassmorphism effect
+  background-color: rgba(93, 94, 99, 0.7);
+  backdrop-filter: blur(5px);
+
+  // Navigation section styles
+  &__navigation {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 8px 16px;
+
+    // Arrow styles
+    &__arrow {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      color: #FFFFFF;
+      cursor: default !important;
+      transition: background-color 0.25s ease-in-out;
+    }
+
+    // Hover effect for arrows
+    :hover {
+      background-color: rgba(0, 0, 0, 0.05) !important;
+    }
+
+    // Label styles
+    &__label {
+      pointer-events: none !important;
+      display: flex;
+      border-radius: 8px;
+      overflow: hidden;
+      font-size: 12px;
+      color: #FFFFFF;
+      white-space: nowrap;
+
+      span {
+        width: 100%;
+        height: 100%;
+        padding: 4px 0;
+      }
+    }
+  }
+
+  // Weekday styles
+  &__month-view__weekdays {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    text-transform: capitalize;
+    font-weight: 500;
+    font-size: 12px;
+    padding: 8px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    color: #D3D4D7;
+
+    &__weekday {
+      text-align: center;
+
+      abbr {
+        text-decoration: none;
+      }
+    }
+  }
+
+  // Days container styles
+  &__month-view__days {
+    flex: unset !important;
+    display: grid !important;
+    grid-template-columns: repeat(7, 1fr) !important;
+    width: 100%;
+    padding: 12px 8px;
+    gap: 8px;
+    color: #FFFFFF; 
+  }
+
+  // Day tile styles
+  &__tile {
+    display: flex;
+    flex: unset !important;
+    width: 32px !important;
+    height: 32px !important;
+    font-size: 12px;
+    cursor: default !important;
+    transition: background-color 0.25s ease-in-out;
+    overflow: hidden;
+    border-radius: 8px;
+
+    // Hover effect for the day tiles
+    :hover {
+      background-color: rgba(0, 0, 0, 0.05);
+    }
+
+    abbr {
+      display: flex;
+      width: 32px !important;
+      height: 32px !important;
+      align-items: center;
+      justify-content: center;
+      border-radius: 8px;
+      overflow: hidden;
+      text-decoration: none;
+      transition: background-color 0.25s ease-in-out;
+    }
+
+    // Styles for the current day
+    &--now {
+      border: 2px solid #008ffd !important;
+      border-radius: 8px;
+      font-weight: 500;
+      color: #7193E7;
+    }
+
+    // Styles for days with active events
+    &--hasActive {
+      border-radius: 8px;
+      color: red;
+    }
+
+    // Styles for the active day
+    &--active {
+      border-radius: 8px;
+      background: #008ffd !important;
+      font-weight: 500;
+      color: white;
+    }
+  }
+
+  // Styles for days from neighboring months
+  &__month-view__days__day--neighboringMonth {
+    color: #cccccc !important;
+  }
+}
