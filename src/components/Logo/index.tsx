@@ -1,11 +1,14 @@
+ // Props interface for the LordIcon component
  interface Props {
-  color?: string;
-  size?: number;
-  strokeWidth?: number;
+  color?: string; // Color of the LordIcon
+  size?: number; // Size of the LordIcon
+  strokeWidth?: number; // Stroke width of the LordIcon
 }
 
+// LordIcon component function
 function Logo({ color, size = 24, strokeWidth = 4 }: Props) {
   return (
+     // Container for the LordIcon
     <div
       className="pointer-events-none aspect-square"
       style={{
@@ -13,6 +16,7 @@ function Logo({ color, size = 24, strokeWidth = 4 }: Props) {
         width: size,
       }}
     >
+       {/* SVG element for the LordIcon */}
       <svg
         xmlns="http://www.w3.org/2000/svg"
         fill={color ?? "currentColor"}
@@ -25,6 +29,7 @@ function Logo({ color, size = 24, strokeWidth = 4 }: Props) {
           width: '100%'
         }}
       >
+        {/* Path element defining the shape of the LordIcon */}
         <path
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -35,4 +40,4 @@ function Logo({ color, size = 24, strokeWidth = 4 }: Props) {
   );
 }
 
-export default Logo; 
+export default Logo;  // Export the LordIcon component

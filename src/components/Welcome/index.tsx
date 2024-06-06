@@ -10,20 +10,22 @@ import { useDispatch } from "react-redux";
 function Welcome() {
   const dispatch = useDispatch();
 
-  const [animatingDown, setAnimatingDown] = useState(true);
-  const [animatingLeft, setAnimatingLeft] = useState(false);
-  const [step, setStep] = useState(1);
-  const [username, setUsername] = useState("");
-  const dialogRef = useRef<HTMLDialogElement>(null);
-  const dialogContentRef = useRef<HTMLDivElement>(null);
+  const [animatingDown, setAnimatingDown] = useState(true); // State for animating down
+  const [animatingLeft, setAnimatingLeft] = useState(false); // State for animating left
+  const [step, setStep] = useState(1); // State for current step in the welcome process
+  const [username, setUsername] = useState(""); // State for user's username
+  const dialogRef = useRef<HTMLDialogElement>(null); // Reference to the dialog element
+  const dialogContentRef = useRef<HTMLDivElement>(null); // Reference to the dialog content element
 
   useEffect(() => {
+    // Effect to show the dialog when component mounts
     if (!dialogRef.current) return;
     if (dialogRef.current.open) return;
     dialogRef.current.showModal();
   }, []);
 
   const closeModal = useCallback(() => {
+    // Function to close the dialog
     if (!dialogRef.current) return;
     if (!dialogRef.current.open) return;
     dialogRef.current.close();
@@ -31,29 +33,32 @@ function Welcome() {
 
   const handleStep = useCallback(
     (step: number) => {
-      setAnimatingLeft(true);
+      // Function to handle changing steps in the welcome process
+      setAnimatingLeft(true); // Start animating left
 
       setTimeout(() => {
-        setAnimatingLeft(false);
-        setAnimatingDown(true);
-        setStep(step);
+        setAnimatingLeft(false); // Stop animating left
+        setAnimatingDown(true); // Start animating down
+        setStep(step); // Set the current step
       }, 250);
 
       setTimeout(() => {
-        setAnimatingDown(false);
+        setAnimatingDown(false); // Stop animating down
       }, 500);
     },
     [setAnimatingDown, setStep]
   );
 
   const handleWelcome = useCallback(() => {
-    dispatch(setUser({ username }));
-    local.set("user", JSON.stringify({ username }));
+    // Function to handle completing the welcome process
+    dispatch(setUser({ username })); // Dispatch setUser action with the username
+    local.set("user", JSON.stringify({ username })); // Store the username in local storage
 
-    closeModal();
+    closeModal(); // Close the dialog
   }, [dispatch, username, closeModal]);
 
   const steps = [
+    // Array of steps in the welcome process
     {
       image: (
         <img
@@ -133,9 +138,10 @@ function Welcome() {
     },
   ];
 
-  useOnClickOutside(dialogContentRef, () => closeModal());
+  useOnClickOutside(dialogContentRef, () => closeModal()); // Hook to handle clicks outside the dialog
 
   return createPortal(
+    // Create a portal to render the dialog outside the root DOM element
     <dialog
       aria-labelledby={"Welcome."}
       aria-modal
@@ -147,10 +153,12 @@ function Welcome() {
         className="flex h-[calc(100vh-48px)] w-[calc(100vw-48px)] flex-shrink-0 flex-col justify-end gap-8 rounded-2xl bg-gradient-to-b from-primary/25 to-#FCFBF8 p-8 sm:h-[465px] sm:w-96"
       >
         {steps[step - 1].image && (
+          // Render image if it exists for the current step
           <div className="relative grid h-full w-full place-items-center border-b border-black/5">
             {step === 1 ? (
               <div
                 onAnimationEnd={() => {
+                  // Callback function for animation end
                   setAnimatingDown(false);
                   setAnimatingLeft(false);
                 }}
@@ -174,12 +182,13 @@ function Welcome() {
             {steps[step - 1].title}
           </span>
           {step === 4 ? (
+             // Render input field for the final step
             <input
               autoFocus
               onChange={(e) => setUsername(e.target.value)}
               onKeyDown={(e) => {
                 if (e.key === "Enter") {
-                  handleWelcome();
+                  handleWelcome(); // Call handleWelcome function on pressing Enter key
                 }
               }}
               placeholder="type here"
@@ -222,4 +231,4 @@ function Welcome() {
   );
 }
 
-export default Welcome;
+export default Welcome; //Export Welcome 

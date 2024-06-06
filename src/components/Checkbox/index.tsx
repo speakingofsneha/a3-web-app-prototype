@@ -25,4 +25,4 @@ function Checkbox({ checked, onChange }: Props) {
   );
 }
 
-export default Checkbox; // Export the Checkbox component for use in other parts of the application
+export default Checkbox; // Export Checkbox component 

@@ -1,5 +1,5 @@
 import { useCallback, useRef, useState } from "react";
-// https://pixabay.com/sound-effects/search/notification/?pagi=3 
+//importing sound effect.ref- https://pixabay.com/sound-effects/search/notification/?pagi=3 
 import toggleSound from 'src/components/Assets/toggle-sound.mp3'; 
 
 // Importing necessary hooks and components
@@ -29,15 +29,7 @@ interface Props {
 }
 
 // TaskItem component definition
-function TaskItem({
-  adding,
-  addingId,
-  color,
-  removeTask,
-  removing,
-  removingId,
-  task,
-}: Props) {
+function TaskItem({ adding, addingId, color, removeTask, removing, removingId, task }: Props) {
   const dispatch = useDispatch(); // Hook to dispatch Redux actions
 
   // Local state for date picker and renaming task
@@ -74,6 +66,7 @@ function TaskItem({
     [dispatch]
   );
 
+   // Function to start renaming a task
   const startRenamingTask = useCallback(
     (e: React.MouseEvent) => {
       const height = e.currentTarget.getBoundingClientRect().height;
@@ -98,9 +91,9 @@ function TaskItem({
 
   // Function to toggle task done state
   const toggleTaskDone = () => {
-    if (!task.done) { // Only play sound if the task is not done (i.e., it is being marked as done)
+    if (!task.done) { // Only play sound if the task is not done 
       const audio = new Audio(toggleSound);
-      audio.volume = 0.05;
+      audio.volume = 0.1;
       audio.play();
     }
     dispatch(updateTask({ task: { ...task, done: !task.done } }));
@@ -117,6 +110,7 @@ function TaskItem({
 
   return (
     <li
+      // Conditional class based on whether a task is being added or removed
       className={`${
         adding && addingId === task.id
           ? "animate-add-item"
@@ -127,6 +121,7 @@ function TaskItem({
         task.done ? "opacity-40" : ""
       }`}
     >
+      {/* Checkbox to mark the task as done */}
       <Checkbox checked={task.done} onChange={toggleTaskDone} />
       {renamingTask ? (
         <textarea
@@ -142,7 +137,7 @@ function TaskItem({
           ref={renameTaskTextareaRef}
           className="hide-scrollbar resize-none bg-transparent py-3 text-left text-base sm:text text-text outline-none sm:min-h-[52px] sm:py-4 md:min-h-[60px] md:py-5"
         />
-      ) : (
+      ) : ( // Render task content if not renaming
         <span
           onClick={(e) => {
             if (e.detail !== 2) return;
@@ -151,6 +146,7 @@ function TaskItem({
           }}
           className="min-h-[44px] w-full py-3 text-base text-text sm:min-h-[52px] sm:py-4 md:min-h-[60px] md:py-5"
         >
+          {/* Render task content with Markdown support */}
           <ReactMarkdown
             allowedElements={["a", "del", "em", "p", "strong"]}
             remarkPlugins={[remarkGfm]}
@@ -175,10 +171,12 @@ function TaskItem({
           </ReactMarkdown>
         </span>
       )}
+      {/* Area for task metadata */}
       <div className="flex items-center gap-3 sm:gap-4">
         <div className="sm:block">
           <Logo color={color} size={12} />
         </div>
+        {/* Display task date if available */}
         {task.date && (
           <span className="whitespace-nowrap text-xs font-medium text-text/50 sm:block">
             {new Date(task.date).toLocaleDateString("en-US", {
@@ -190,6 +188,7 @@ function TaskItem({
           </span>
         )}
         <div ref={datePickerRef} className="relative sm:block">
+        {/* Button to open calendar for selecting date */}
         {(width === 0 ? window.innerWidth : width) >= 768 ? (
           <Button
             icon={
@@ -205,7 +204,7 @@ function TaskItem({
               setChoosingDate((choosingDate) => !choosingDate);
             }}
           />
-        ) : (
+        ) : ( // Small screen button
           <Button
             icon={
               <LordIcon
@@ -222,6 +221,7 @@ function TaskItem({
             size="sm"
           />
         )}
+          {/* Calendar for selecting date */}
           {choosingDate && choosingDateTaskId === task.id && (
             <div className="absolute right-0 top-[calc(100%+8px)] z-10">
               <Calendar
@@ -235,6 +235,7 @@ function TaskItem({
             </div>
           )}
         </div>
+        {/* Button to remove the task */}
         {(width === 0 ? window.innerWidth : width) >= 768 ? (
           // For larger screens (width >= 768 pixels)
           <Button
@@ -268,4 +269,4 @@ function TaskItem({
   );
 }
 
-export default TaskItem; // Export the TaskItem component for use in other parts of the application
+export default TaskItem; // Export TaskItem component 
