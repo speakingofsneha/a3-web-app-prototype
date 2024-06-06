@@ -1,5 +1,6 @@
 import { useCallback, useRef, useState } from "react";
-// rename task doesn't work ??
+// https://pixabay.com/sound-effects/search/notification/?pagi=3 
+import toggleSound from 'src/components/Assets/toggle-sound.mp3'; 
 
 // Importing necessary hooks and components
 import { useDispatch } from "react-redux";
@@ -97,6 +98,11 @@ function TaskItem({
 
   // Function to toggle task done state
   const toggleTaskDone = () => {
+    if (!task.done) { // Only play sound if the task is not done (i.e., it is being marked as done)
+      const audio = new Audio(toggleSound);
+      audio.volume = 0.05;
+      audio.play();
+    }
     dispatch(updateTask({ task: { ...task, done: !task.done } }));
   };
 
