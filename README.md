@@ -1,47 +1,48 @@
+# Meet Anu
 
-- reflection, future cons, acknowledgements etc
-- update app name everywhere. 
-- deploy using netlify
-- add demo section & wrap up readme 
-
-
-# Task Management Web-Application
-use emoji's in titles for scanning!!!! 
-## Overview- anu?
+## Overview
 ### Introduction 
+#### Demo  
+### Version control
 
 ## Features 
 
 ## Tech Stack
-#### UI Components
+### UI Components
 - heroicons
 - lordicon
 
-#### Front-end Frameworks & Libraries 
+### Front-end Frameworks & Libraries 
 - react.js
 - react-calendar
 - atlassian's react-beautiful-dnd
+- react-markdown w/ remark-gfm plugin
 - react-router-dom
-- redux 
+- redux saga 
 
-Styling and Design 
+### Styling and Design 
 - tailwindcss with postcss plugin
 
-Development tools and Language 
+### Development tools and Language 
 - typescript
 - vite.
 
-Hosting and Deoployment
-- maybe vercel to deploy?
+### Hosting and Deoployment
+- vercel 
 
-## Instructions to run locally
+## Instructions 
+#### To run the application locally:
+1. Clone the repository by running 'git clone https://github.com/speakingofsneha/a3-web-app-prototype.git'
+2. Install it's dependencies by typing 'npm install' in your terminal 
+3. Once completed, run 'npm run dev' for a developmemt version of the code 
 
-## Design rationale & iterations 
-link to figma file?
+## Design 
+### Hi-Fidelity Interface Rationale 
+### User feedback & Iterations
 
 ## Reflection
-
-## Future considerations
+### What went wrong
+### Future considerations
 
 ## Acknowledgements
 ### References

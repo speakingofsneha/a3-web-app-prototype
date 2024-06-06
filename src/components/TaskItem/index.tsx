@@ -134,7 +134,7 @@ function TaskItem({
             }
           }}
           ref={renameTaskTextareaRef}
-          className="hide-scrollbar resize-none bg-transparent py-3 text-left text-base text-text outline-none sm:min-h-[52px] sm:py-4 md:min-h-[60px] md:py-5"
+          className="hide-scrollbar resize-none bg-transparent py-3 text-left text-base sm:text text-text outline-none sm:min-h-[52px] sm:py-4 md:min-h-[60px] md:py-5"
         />
       ) : (
         <span
@@ -170,11 +170,11 @@ function TaskItem({
         </span>
       )}
       <div className="flex items-center gap-3 sm:gap-4">
-        <div className="hidden sm:block">
+        <div className="sm:block">
           <Logo color={color} size={12} />
         </div>
         {task.date && (
-          <span className="hidden whitespace-nowrap text-xs font-medium text-text/50 sm:block">
+          <span className="whitespace-nowrap text-xs font-medium text-text/50 sm:block">
             {new Date(task.date).toLocaleDateString("en-US", {
               month: "short",
               day: "numeric",
@@ -183,7 +183,8 @@ function TaskItem({
               ` · ${new Date(task.date).getFullYear()}`}
           </span>
         )}
-        <div ref={datePickerRef} className="relative hidden sm:block">
+        <div ref={datePickerRef} className="relative sm:block">
+        {(width === 0 ? window.innerWidth : width) >= 768 ? (
           <Button
             icon={
               <LordIcon
@@ -198,6 +199,23 @@ function TaskItem({
               setChoosingDate((choosingDate) => !choosingDate);
             }}
           />
+        ) : (
+          <Button
+            icon={
+              <LordIcon
+                src="https://cdn.lordicon.com/qjuahhae.json"
+                trigger="hover"
+                colors={{ primary: "#808080" }}
+                size={12}
+              />
+            }
+            onClick={() => {
+              setChoosingDateTaskId(task.id);
+              setChoosingDate((choosingDate) => !choosingDate);
+            }}
+            size="sm"
+          />
+        )}
           {choosingDate && choosingDateTaskId === task.id && (
             <div className="absolute right-0 top-[calc(100%+8px)] z-10">
               <Calendar
@@ -212,6 +230,7 @@ function TaskItem({
           )}
         </div>
         {(width === 0 ? window.innerWidth : width) >= 768 ? (
+          // For larger screens (width >= 768 pixels)
           <Button
             onClick={() => removeTask(task.id)}
             icon={
@@ -224,6 +243,7 @@ function TaskItem({
             }
           />
         ) : (
+          // For smaller screens (width < 768 pixels)
           <Button
             onClick={() => removeTask(task.id)}
             icon={
