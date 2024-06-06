@@ -2,7 +2,6 @@ import { all, put, takeLatest } from "redux-saga/effects";
 
 import { loadListsSuccess } from "./actions";
 
-//update path. 
 import { local } from "@services/storage";
 
 function* loadLists(): Generator {

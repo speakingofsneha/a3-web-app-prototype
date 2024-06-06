@@ -539,8 +539,8 @@ function List() {
           </div>
         )}
         {filteredTasks.length === 0 ? (
-          <span className="pt-4 text-center text-sm text-text/50 sm:pt-8">
-            You're all done!
+          <span className="pt-4 text-center text-base text-text/50 sm:pt-8"> 
+            relax, you're all done :)
           </span>
         ) : !slug ? (
           <ul className="flex w-full flex-col pb-32 pt-4 after:pointer-events-none after:absolute after:bottom-0 after:h-32 after:w-full after:bg-gradient-to-b after:from-background/0 after:to-background md:pt-7">
