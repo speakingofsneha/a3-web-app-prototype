@@ -118,10 +118,10 @@
 
     // Styles for the current day
     &--now {
-      border: 2px solid #008ffd !important; // Adding border for current day
+      border: 2px solid #50E0FF !important; // Adding border for current day
       border-radius: 8px; // Adding border radius
       font-weight: 500; // Setting font weight
-      color: #7193E7; // Setting color
+      color: #50E0FF; // Setting color
     }
 
     // Styles for days with active events
@@ -133,9 +133,9 @@
     // Styles for the active day
     &--active {
       border-radius: 8px; // Adding border radius
-      background: #008ffd !important; // Adding background color for active day
+      background: #50E0FF !important; // Adding background color for active day
       font-weight: 500; // Setting font weight
-      color: white; // Setting color
+      color: #50E0FF; // Setting color
     }
   }
 
