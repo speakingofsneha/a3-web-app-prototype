@@ -35,7 +35,8 @@ Below is a brief rationale of the application's 'complex' build for it's fairly 
 - **Vite:** Provides fast development and builds with instant HMR.
 ### Hosting and Deoployment
 - **Github:** Repository hosting and version control (although I only used it in my final stage of development. To view early versions of the code and further insight on development process visit- https://www.figma.com/design/mXP0uRyY09puysDa9I7NYG/Untitled?node-id=1-5022&t=mAXTb3nHE3Uvbhms-1 )
-- **Vercel:** Easy deployments, global CDN, and serverless functions.
+
+github repository link: https://github.com/speakingofsneha/a3-web-app-prototype 
 
 ## Instructions 
 ### To run the application locally:
@@ -60,6 +61,8 @@ I conducted multiple rounds of usability testing throughout the design process, 
 ![Final desktop interface](src/components/Assets/images/desktop.png)
 ![Final mobile interface](src/components/Assets/images/mobile.png)
 
+To view all the iterations in detail visit https://www.figma.com/design/mXP0uRyY09puysDa9I7NYG/A2-Web-App-Design?node-id=1-1618 
+
 ## Reflection
 ### What went well
 - Human-centered design: The design process was heavily influenced by user feedback and personal experience, resulting in a user-friendly interface that prioritizes simplicity and usability.
@@ -82,7 +85,7 @@ I conducted multiple rounds of usability testing throughout the design process, 
 
 References used when building the application
 1. Code academy's cheat sheets: 
-2. Existing TypeScript based To-do projects. Allthough the final product is vastly different, viewing the code taught me greatly on how to structure code, what technologies to implement etc. Examples include
+2. Existing TypeScript based To-do projects. Allthough the final product is vastly different, viewing existing project's improved my understanding of typescript, how to structure code, what technologies to implement. Examples include: 
     - https://github.com/gyenabubakar/tasksheet-app 
     - https://github.com/peguimasid/task-it 
     - https://github.com/CodeItDownYt/React-Task-Management 
