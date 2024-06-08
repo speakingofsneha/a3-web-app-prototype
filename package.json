@@ -13,6 +13,7 @@
     "@heroicons/react": "^2.0.18",
     "@reduxjs/toolkit": "^1.9.5",
     "@types/uuid": "^9.0.1",
+    "bun": "^1.1.12",
     "lodash": "^4.17.21",
     "lord-icon-element": "^4.1.1",
     "lottie-web": "^5.12.0",
