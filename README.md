@@ -1,4 +1,9 @@
 # Meet Anu; A to-do list designed with the human experience in mind
+## Introduction; Why a To-Do List?
+I have tried a dozens of todo's applications, all promising to be 'life organising' but struggled to stick with any beyond a couple of weeks. Initially, I thought the problem was with myself- **I lacked discipline, organization and grit** to keep up. However, *In Design of Everyday Things*, Norman asserts that there is no “human error,” **only bad design**. 
+
+With this new found hope, I designed and developed *Anu*- a **humane** approach to task management that avoids decision fatigue by focuing on **simplicity** and **speed** to keep users organized and motivated without the overwhelm of endless functionalities and integrations. With Anu, I hope to encourage a kind, mindful way to manage tasks that foster a sense of **clarity** and **calm** amidst the chaos of daily life.
+
 ## Features
 Using this application as my primary to-do list during its development provided great insight into which features I needed, and which were futile. Below are the ones I ended up with: 
 #### ✍️ Create tasks 
@@ -8,11 +13,7 @@ Using this application as my primary to-do list during its development provided 
 #### 👆 Drag-and-drop around for easy reordering
 #### ✏️ Renaming/editing lists & tasks (mistakes happen all the time!)
 #### 🗑️ Deleting them as needed
-
-## Introduction; Why a To-Do List?
-I have tried a dozens of todo's applications, all promising to be 'life organising' but struggled to stick with any beyond a couple of weeks. Initially, I thought the problem was with myself- **I lacked discipline, organization and grit** to keep up. However, *In Design of Everyday Things*, Norman asserts that there is no “human error,” **only bad design**. 
-
-With this new found hope, I designed and developed *Anu*- a **humane** approach to task management that avoids decision fatigue by focuing on **simplicity** and **speed** to keep users organized and motivated without the overwhelm of endless functionalities and integrations. With Anu, I hope to encourage a kind, mindful way to manage tasks that foster a sense of **clarity** and **calm** amidst the chaos of daily life.
+I removed the notes feature from the initial data model as I never saw the need to use it during the 3 weeks I developed this. However, although editing a task wasn't part of the brief, i felt it much more necessary to be be able to do so in this context, and hence decided to implement this instead. The goal of this project is to be an mvp of a simple, usable to-do list that I can actually start sending out to users/start using. 
 
 ## Tech Stack
 ...and that brings us to Tesler’s Law- "complexity cannot be designed away and therefore must be assumed by either the system or the user". Essentially, when you design something that is easier for someone to use; while you’ve reduced the complexity for that person, you have also increased it for yourself behind the scenes, and that seems to be the case here as well :) 
